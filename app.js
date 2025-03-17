@@ -1,4 +1,4 @@
-import { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "./firebase.js";
+import { auth, createUserWithEmailAndPassword, onAuthStateChanged, signOut } from "./firebase.js";
 
 const submitBtn = document.getElementById("registerBtn");
 const userName = document.getElementById("user_name");
@@ -8,8 +8,6 @@ const userPassword = document.getElementById("user_password");
 submitBtn?.addEventListener("click", async (e) => {
   e.preventDefault();
   let isValid = true;
-
-  // Name validation
   if (userName.value.trim() === "") {
     let errorMes = document.getElementById("userName_error");
     errorMes.style.color = "red";
@@ -28,10 +26,7 @@ submitBtn?.addEventListener("click", async (e) => {
   } else {
     document.getElementById("userEmail_error").innerHTML = "";
   }
-
-
-
-  if (!isValid) return; // Agar koi field empty hai, toh aage mat jao
+  if (!isValid) return;
 
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value);
@@ -50,6 +45,42 @@ submitBtn?.addEventListener("click", async (e) => {
   }
 });
 
+const blogName = document.getElementById("blogName");
+const blogEmail = document.getElementById("BlogEmail");
+let logoutBtn = document.getElementById("logout");
+const logout = () => {
+  signOut(auth).then(() => {
+    // Sign-out successful.
+    localStorage.removeItem("userName");
+    Swal.fire("Logged Out!", "You have been logged out.", "success");
+    setTimeout(() => {
+      window.location.href = "./index.html";
+    }, 2000)
+  }).catch((error) => {
+    // An error happened.
+    console.log(error);
+
+  });
+}
+logoutBtn?.addEventListener("click", logout);
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    console.log("user----->", user);
+    if (window.location.pathname !== "/blog.html") {
+      window.location.href = "/blog.html"; // Redirect to blog page if logged in
+    }
+    loader.style.display = "none";
+    main.style.display = "block";
+    blogName.innerHTML = user.email.slice(0, user.email.indexOf("@"));
+    blogEmail.innerHTML = user.email;
+  } else {
+    console.log("user not login");
+    if (location.pathname !== "/login.html") {
+      window.location.href = "/login.html"; // Redirect to login page if not logged in
+    }
+  }
+});
 
 
 
