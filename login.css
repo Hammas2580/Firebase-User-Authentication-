@@ -1,0 +1,88 @@
+/* ===== General Styling ===== */
+body {
+    background-color: #f4f4f4 !important;
+    font-family: "Poppins", sans-serif !important;
+  
+}
+
+/* ===== Heading Styling ===== */
+.heading {
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 700;
+    color: #333;
+    margin-top: 30px;
+}
+
+/* ===== Main Form Container ===== */
+.main_div {
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* margin: 50px auto; */
+    text-align: left;
+    width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 50px !important;
+}
+
+/* ===== Form Input Styling ===== */
+.user_input {
+    margin-bottom: 15px;
+}
+
+.user_input p {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input_field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input_field:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* ===== Button Styling ===== */
+.input_btn {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.blog_imgaes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* margin-top: 30px; */
+}
+.blog_imgaes .images {
+    width: 300px !important;
+    height: 200px !important;
+}
+
+
+@media (max-width: 500px){
+    .main_div {
+        width: 80%;
+    }
+} 

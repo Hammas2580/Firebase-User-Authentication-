@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase Authentication</title>
+
+    <!-- Bootstrap Link -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="sweetalert2.min.css" />
+  </head>
+  <body>
+    <h1 class="heading">Firebase User Authentication</h1>
+    <div class="blog_imgaes">
+      <img class="images"
+        src="https://cdn.pixabay.com/photo/2012/05/07/18/57/blog-49006_1280.png"
+        alt=""
+      />
+    </div>
+    <div class="container main_div">
+      <div class="input_div">
+        <div class="row">
+          <div class="col">
+            <div class="user_input">
+              <p>Your Name</p>
+              <input
+                type="text"
+                id="user_name"
+                class="input_field"
+                placeholder="Enter Your Name"
+              />
+              <p id="userName_error"></p>
+            </div>
+            <div class="user_input">
+              <p>Your Email</p>
+              <input
+                type="email"
+                id="user_email"
+                class="input_field"
+                placeholder="Enter Your Email"
+              />
+              <p id="userEmail_error"></p>
+            </div>
+            <div class="user_input">
+              <p>Your Password</p>
+              <input
+                type="password"
+                id="user_password"
+                class="input_field"
+                placeholder="Enter Your Password"
+              />
+              <p id="userPassword_error"></p>
+            </div>
+            <div class="input_btn">
+              <button id="registerBtn" class="btn btn-primary">Register</button>
+            </div>
+            <div class="input_btn">
+              <a href="./login.html">
+                <button class="btn btn-primary">Login</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Firebase & App JS -->
+    <script type="module" src="./firebase.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

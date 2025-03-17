@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase Authentication</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="./login.css" />
+  </head>
+  <body>
+    <h1 class="heading">Firebase User Authentication</h1>
+    <div class="blog_imgaes">
+      <img
+        class="images"
+        src="https://cdn.pixabay.com/photo/2012/05/07/18/57/blog-49006_1280.png"
+        alt=""
+      />
+    </div>
+    <div class="container main_div">
+      <div class="input_div">
+        <div class="row">
+          <div class="col">
+            <div class="user_input">
+              <p>Your Email</p>
+              <input
+                id="loginEmail"
+                type="email"
+                class="input_field"
+                placeholder="Enter Your Email"
+              />
+              <p id="loginEmailError"></p>
+            </div>
+            <div class="user_input">
+              <p>Your Password</p>
+              <input
+                id="loginPassword"
+                type="password"
+                class="input_field"
+                placeholder="Enter Your Password"
+              />
+            </div>
+            <div class="input_btn">
+              <button id="loginBtn1" type="submit" class="btn btn-primary">
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Correct Script Order -->
+    <script type="module" src="./firebase.js"></script>
+    <!-- First -->
+    <script type="module" src="./app.js"></script>
+    <!-- Second -->
+    <script type="module" src="./login.js"></script>
+    <!-- Third -->
+  </body>
+</html>
